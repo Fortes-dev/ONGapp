@@ -9,6 +9,7 @@ public class Ong {
 	String tipo;
 	String web;
 	int idLocalizacion;
+	Localizacion localizacion;
 
 	public Ong(ResultSet result) {
 		try {
