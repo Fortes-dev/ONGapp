@@ -5,8 +5,6 @@ import java.sql.SQLException;
 
 public class Usuario {
 	int id;
-	String nombre;
-	String apellido;
 	String email;
 	String username;
 	String contraseña;
@@ -15,8 +13,6 @@ public class Usuario {
 	public Usuario(ResultSet result) {
 		try {
 			this.id = result.getInt("id");
-			this.nombre = result.getString("nombre");
-			this.apellido = result.getString("apellido");
 			this.email = result.getString("email");
 			this.username = result.getString("username");
 			this.contraseña = result.getString("contraseña");

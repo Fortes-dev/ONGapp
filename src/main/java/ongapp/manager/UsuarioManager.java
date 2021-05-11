@@ -31,19 +31,36 @@ public class UsuarioManager {
 		}
 	}
 	
-	public void createUsuario(Connection con, int id, String nombre, String apellido, 
-			String email, String username, String contraseña, int idLocalizacion) {
+	public boolean findLogin(Connection con, String username, String contraseña) {
+		try (PreparedStatement prepStmt = con
+				.prepareStatement("select username from login where username = ? and contraseña = ?")) {
+
+			prepStmt.setString(1, username);
+			prepStmt.setString(2, contraseña);
+
+			ResultSet result = prepStmt.executeQuery();
+
+			con.close();
+			
+			if (result.next())
+				return true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+	}
+	
+	public void createUsuario(Connection con, String email, String username, String contraseña) {
 
 		try (PreparedStatement prepStmt = con
-				.prepareStatement("INSERT INTO usuario VALUES (?, ?, ?, ?, ?, ?, ?)")) {
+				.prepareStatement("INSERT INTO usuario VALUES (?, ?, ?)")) {
 			con.setAutoCommit(false);
-			prepStmt.setInt(1, id);
-			prepStmt.setString(2, nombre);
-			prepStmt.setString(3, apellido);
-			prepStmt.setString(4, email);
-			prepStmt.setString(5, username);
-			prepStmt.setString(6, contraseña);
-			prepStmt.setInt(7, idLocalizacion);
+			
+			prepStmt.setString(1, email);
+			prepStmt.setString(2, username);
+			prepStmt.setString(3, contraseña);
 
 			prepStmt.executeUpdate();
 
@@ -62,41 +79,12 @@ public class UsuarioManager {
 
 	}
 	
-	public void modifyUsuario(Connection con, int id, String nuevoNombre, String apellido, String nombre,
-			String email, String contraseña, int idLocalizacion) {
-
-		try (PreparedStatement prepStmt = con
-				.prepareStatement("UPDATE usuario SET nombre = ?, apellido = ?, email = ?, contraseña = ? WHERE id like ? OR nombre like ?")) {
-			con.setAutoCommit(false);
-			
-			prepStmt.setString(1, nuevoNombre);
-			prepStmt.setString(2, apellido);
-			prepStmt.setString(3, email);
-			prepStmt.setString(4, contraseña);
-			prepStmt.setInt(5, id);
-			prepStmt.setString(6, nombre);
-
-			prepStmt.executeUpdate();
-
-			con.commit();
-
-		} catch (SQLException e) {
-			try {
-				con.rollback();
-			} catch (SQLException e1) {
-				
-				e1.printStackTrace();
-			}
-			e.printStackTrace();
-		}
-
-	}
 	
-	public void deleteUsuario(Connection con, int id, String nombre) {
-		try (PreparedStatement prepStmt = con.prepareStatement("DELETE FROM usuario WHERE id like ? or nombre like ?")) {
+	public void deleteUsuario(Connection con, int id, String username) {
+		try (PreparedStatement prepStmt = con.prepareStatement("DELETE FROM usuario WHERE id like ? or username like ?")) {
 			con.setAutoCommit(false);
 			prepStmt.setInt(1, id);
-			prepStmt.setString(2, nombre);
+			prepStmt.setString(2, username);
 			prepStmt.executeUpdate();
 
 			con.commit();
