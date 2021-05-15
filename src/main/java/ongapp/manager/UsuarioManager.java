@@ -11,7 +11,15 @@ import java.util.List;
 
 import ongapp.dao.Usuario;
 
+/**
+ * @author carlos.fortes.medina
+ *	Manager de la tabla Usuario
+ */
 public class UsuarioManager {
+	
+	/**
+	 * @return Todos los usuarios
+	 */
 	public List<Usuario> findAll(Connection con) {
 		try (Statement stmt = con.createStatement()) {
 			ResultSet result = stmt.executeQuery("SELECT * FROM usuario");
@@ -29,7 +37,10 @@ public class UsuarioManager {
 			return Collections.emptyList();
 		}
 	}
-
+	
+	/**
+	 * @return Nos devuelve el username
+	 */
 	public String findLoginUser(Connection con, String username) {
 		try (PreparedStatement prepStmt = con.prepareStatement("select username from usuario where username = ?")) {
 
@@ -44,7 +55,10 @@ public class UsuarioManager {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * @return Nos devuelve la password
+	 */
 	public String findLoginPassword(Connection con, String password) {
 		try (PreparedStatement prepStmt = con.prepareStatement("select contraseña from usuario where contraseña = ?")) {
 
@@ -58,7 +72,9 @@ public class UsuarioManager {
 			return null;
 		}
 	}
-
+	/**
+	 * @return Crea un nuevo usuario
+	 */
 	public void createUsuario(Connection con, String email, String username, String contraseña) {
 
 		try (PreparedStatement prepStmt = con.prepareStatement("INSERT INTO usuario (email, username, contraseña) VALUES (?, ?, ?)")) {
@@ -83,7 +99,10 @@ public class UsuarioManager {
 		}
 
 	}
-
+	
+	/**
+	 * @return Borra un registro de usuario(buscamos por nombre)
+	 */
 	public void deleteUsuario(Connection con, int id, String username) {
 		try (PreparedStatement prepStmt = con
 				.prepareStatement("DELETE FROM usuario WHERE id like ? or username like ?")) {
