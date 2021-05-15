@@ -6,17 +6,16 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: greenyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <PasswordField layoutX="118.0" layoutY="376.0" prefHeight="35.0" prefWidth="165.0" promptText="Password" />
-      <TextField layoutX="117.0" layoutY="319.0" prefHeight="39.0" prefWidth="165.0" promptText="Username" />
-      <Button layoutX="214.0" layoutY="433.0" mnemonicParsing="false" text="Login" />
-      <Button layoutX="117.0" layoutY="433.0" mnemonicParsing="false" text="Register" />
-      <ImageView fitHeight="162.0" fitWidth="157.0" layoutX="121.0" layoutY="128.0">
-         <image>
-            <Image url="@ONGapp/src/main/resources/images/kisspng-hand-drawing-6515307621006106.png" />
-         </image>
-      </ImageView>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: greenyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.LoginController">
+	<children>
+		<TextField fx:id="username" layoutX="117.0" layoutY="319.0" prefHeight="39.0" prefWidth="165.0" promptText="Username" />
+		<PasswordField fx:id="password" layoutX="118.0" layoutY="376.0" prefHeight="35.0" prefWidth="165.0" promptText="Password" />
+		<Button fx:id="buttonLogin" layoutX="214.0" layoutY="433.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
+		<Button fx:id="buttonRegister" layoutX="117.0" layoutY="433.0" mnemonicParsing="false" onAction="#handleRegister" text="Register" />
+		<ImageView fitHeight="162.0" fitWidth="157.0" layoutX="121.0" layoutY="128.0">
+			<image>
+				<Image url="@../images/kisspng-hand-drawing-6515307621006106.png" />
+			</image>
+		</ImageView>
+	</children>
 </AnchorPane>

@@ -11,7 +11,6 @@ import java.util.List;
 
 import ongapp.dao.Usuario;
 
-
 public class UsuarioManager {
 	public List<Usuario> findAll(Connection con) {
 		try (Statement stmt = con.createStatement()) {
@@ -30,34 +29,41 @@ public class UsuarioManager {
 			return Collections.emptyList();
 		}
 	}
-	
-	public boolean findLogin(Connection con, String username, String contraseña) {
-		try (PreparedStatement prepStmt = con
-				.prepareStatement("select username from login where username = ? and contraseña = ?")) {
+
+	public String findLoginUser(Connection con, String username) {
+		try (PreparedStatement prepStmt = con.prepareStatement("select username from usuario where username = ?")) {
 
 			prepStmt.setString(1, username);
-			prepStmt.setString(2, contraseña);
 
 			ResultSet result = prepStmt.executeQuery();
-
-			con.close();
-			
-			if (result.next())
-				return true;
+			result.next();
+			return result.getString("username");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return false;
+			return null;
 		}
-		return false;
 	}
-	
+
+	public String findLoginPassword(Connection con, String password) {
+		try (PreparedStatement prepStmt = con.prepareStatement("select contraseña from usuario where contraseña = ?")) {
+
+			prepStmt.setString(1, password);
+
+			ResultSet result = prepStmt.executeQuery();
+			result.next();
+			return result.getString("contraseña");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public void createUsuario(Connection con, String email, String username, String contraseña) {
 
-		try (PreparedStatement prepStmt = con
-				.prepareStatement("INSERT INTO usuario VALUES (?, ?, ?)")) {
+		try (PreparedStatement prepStmt = con.prepareStatement("INSERT INTO usuario (email, username, contraseña) VALUES (?, ?, ?)")) {
 			con.setAutoCommit(false);
-			
+
 			prepStmt.setString(1, email);
 			prepStmt.setString(2, username);
 			prepStmt.setString(3, contraseña);
@@ -65,23 +71,22 @@ public class UsuarioManager {
 			prepStmt.executeUpdate();
 
 			con.commit();
-			con.close();
 
 		} catch (SQLException e) {
 			try {
 				con.rollback();
 			} catch (SQLException e1) {
-				
+
 				e1.printStackTrace();
 			}
 			e.printStackTrace();
 		}
 
 	}
-	
-	
+
 	public void deleteUsuario(Connection con, int id, String username) {
-		try (PreparedStatement prepStmt = con.prepareStatement("DELETE FROM usuario WHERE id like ? or username like ?")) {
+		try (PreparedStatement prepStmt = con
+				.prepareStatement("DELETE FROM usuario WHERE id like ? or username like ?")) {
 			con.setAutoCommit(false);
 			prepStmt.setInt(1, id);
 			prepStmt.setString(2, username);
@@ -94,5 +99,5 @@ public class UsuarioManager {
 
 		}
 	}
-	
+
 }

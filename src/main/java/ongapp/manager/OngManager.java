@@ -36,7 +36,7 @@ public class OngManager {
 	public void findByIdLocalizacion(Connection con, int idLocalizacion) {
 
 		try (PreparedStatement prepStmt = con
-				.prepareStatement("SELECT * FROM ong o JOIN localizacion l on (o.localizacionid = l.id) where idlocalizacion like ?")) {
+				.prepareStatement("SELECT * FROM ong o RIGHT JOIN localizacion l on (o.localizacionid = l.id) where idlocalizacion like ?")) {
 			con.setAutoCommit(false);
 			prepStmt.setInt(1, idLocalizacion);
 			prepStmt.executeUpdate();
