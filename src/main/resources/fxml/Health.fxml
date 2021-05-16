@@ -1,93 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.PrincipalController">
-   <children>
-      <AnchorPane layoutX="-8.0" layoutY="-4.0" prefHeight="407.0" prefWidth="609.0" style="-fx-background-color: #E9D57E;">
-         <children>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="33.0" prefWidth="95.0" text="Go Back" />
-            <AnchorPane layoutX="14.0" layoutY="61.0" prefHeight="78.0" prefWidth="623.0">
-               <children>
-                  <Text layoutX="28.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital 1" wrappingWidth="482.13671875">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="452.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.5 km away" wrappingWidth="162.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="28.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C/ Nueva, 15" wrappingWidth="482.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="14.0" layoutY="139.0" prefHeight="78.0" prefWidth="623.0">
-               <children>
-                  <Text layoutX="28.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital 2" wrappingWidth="482.13671875">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="452.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.5 km away" wrappingWidth="162.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="28.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C/ Nueva, 15" wrappingWidth="482.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="14.0" layoutY="290.0" prefHeight="78.0" prefWidth="623.0">
-               <children>
-                  <Text layoutX="28.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital 4" wrappingWidth="482.13671875">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="452.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.5 km away" wrappingWidth="162.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="28.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C/ Nueva, 15" wrappingWidth="249.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="14.0" layoutY="217.0" prefHeight="78.0" prefWidth="623.0">
-               <children>
-                  <Text layoutX="28.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital 3" wrappingWidth="482.13671875">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="452.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.5 km away" wrappingWidth="162.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="28.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C/ Nueva, 15" wrappingWidth="482.13671875">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.HealthController">
+	<children>
+		<AnchorPane layoutX="-8.0" layoutY="-4.0" prefHeight="407.0" prefWidth="609.0" style="-fx-background-color: greenyellow;">
+			<children>
+				<ComboBox fx:id="cbx" layoutX="222.0" layoutY="18.0" prefHeight="25.0" prefWidth="108.0">
+					
+				</ComboBox>
+				<Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" text="Go Back">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Button>
+				<HBox layoutX="10.0" layoutY="88.0" prefHeight="312.0" prefWidth="594.0">
+					<children>
+						<TableView prefHeight="342.0" prefWidth="597.0" style="-fx-background-color: greenyellow;">
+							<columns>
+								<TableColumn prefWidth="148.0" text="Name" />
+								<TableColumn text="Type" />
+								<TableColumn prefWidth="111.0" text="Website" />
+								<TableColumn prefWidth="126.0" text="City" />
+								<TableColumn prefWidth="128.0" text="Location" />
+							</columns>
+						</TableView>
+					</children>
+				</HBox>
+				<TextField layoutX="341.0" layoutY="14.0" prefHeight="33.0" prefWidth="247.0" />
+			</children>
+		</AnchorPane>
+	</children>
 </AnchorPane>

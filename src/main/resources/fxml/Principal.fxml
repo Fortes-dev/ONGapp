@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-	prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="ongapp.application.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.PrincipalController">
 	<children>
-		<AnchorPane layoutX="-8.0" layoutY="-4.0"
-			prefHeight="407.0" prefWidth="609.0"
-			style="-fx-background-color: #E9D57E;">
+		<AnchorPane layoutX="-8.0" layoutY="-4.0" prefHeight="407.0" prefWidth="609.0" style="-fx-background-color: greenyellow;">
 			<children>
-				<Button layoutX="191.0" layoutY="26.0"
-					mnemonicParsing="false" onAction="#switchToSedes" prefHeight="57.0"
-					prefWidth="199.0" text="ONG Offices (Sedes)" />
-				<Button layoutX="191.0" layoutY="293.0"
-					mnemonicParsing="false" onAction="#switchToSchools"
-					prefHeight="57.0" prefWidth="199.0" text="Schools" />
-				<Button layoutX="191.0" layoutY="204.0"
-					mnemonicParsing="false" onAction="#switchToHealth"
-					prefHeight="57.0" prefWidth="199.0" text="Health" />
-				<Button layoutX="191.0" layoutY="118.0"
-					mnemonicParsing="false" onAction="#switchToEmbajadas"
-					prefHeight="57.0" prefWidth="199.0" text="Embassies" />
+				<Button fx:id="handleButtonSedes" layoutX="191.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToSedes" prefHeight="57.0" prefWidth="199.0" text="ONG Offices">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#009e05" />
+               </effect></Button>
+				<Button fx:id="handleButtonSchools" layoutX="191.0" layoutY="293.0" mnemonicParsing="false" onAction="#switchToSchools" prefHeight="57.0" prefWidth="199.0" text="Schools">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#009e05" />
+               </effect></Button>
+				<Button fx:id="handleButtonHealth" layoutX="191.0" layoutY="204.0" mnemonicParsing="false" onAction="#switchToHealth" prefHeight="57.0" prefWidth="199.0" text="Health">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#009e05" />
+               </effect></Button>
+				<Button fx:id="handleButtonEmbajadas" layoutX="191.0" layoutY="118.0" mnemonicParsing="false" onAction="#switchToEmbajadas" prefHeight="57.0" prefWidth="199.0" text="Embassies">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#009e05" />
+               </effect></Button>
 			</children>
 		</AnchorPane>
 	</children>

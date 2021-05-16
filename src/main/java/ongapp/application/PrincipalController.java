@@ -1,33 +1,58 @@
 package ongapp.application;
 
-import java.awt.event.ActionEvent;
-import java.io.IOException;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.*;
-import javafx.stage.Stage;
 
 public class PrincipalController {
 
+	// Botones para el menú principal
+
+	@FXML
+	Button buttonEmbajada;
 	@FXML
 	Button buttonSedes;
 	@FXML
-	Button buttonRegister;
+	Button buttonHealth;
+	@FXML
+	Button buttonSchools;
 	@FXML
 	SceneController escena = new SceneController();
 
 	/**
-	 * Botón de registo, nos lleva a la ventana Register
+	 * Botón de acceso a las sedes.
 	 */
 	@FXML
-	public void handlePrincipal(ActionEvent event) throws Exception {
-		
-		escena.switchToSedes(event);
+	public void handleButtonSedes(ActionEvent event) throws Exception {
 
+		escena.switchToSedes(event);
+	}
+
+	/**
+	 * Botón de acceso a las embajadas.
+	 */
+	@FXML
+	public void handleButtonEmbajadas(ActionEvent event) throws Exception {
+
+		escena.switchToEmbajadas(event);
+	}
+
+	/**
+	 * Botón de acceso a salud.
+	 */
+	@FXML
+	public void handleButtonHealth(ActionEvent event) throws Exception {
+
+		escena.switchToHealth(event);
+	}
+
+	/**
+	 * Botón de acceso a educación.
+	 */
+	@FXML
+	public void handleButtonSchools(ActionEvent event) throws Exception {
+
+		escena.switchToSchools(event);
 	}
 }
