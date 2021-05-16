@@ -8,8 +8,8 @@ public class Ong {
 	String nombre;
 	String tipo;
 	String web;
-	int idLocalizacion;
-	Localizacion localizacion;
+	String ciudad;
+	String calle;
 
 	public Ong(ResultSet result) {
 		try {
@@ -17,7 +17,8 @@ public class Ong {
 			this.nombre = result.getString("nombre");
 			this.tipo = result.getString("tipo");
 			this.web = result.getString("web");
-			this.idLocalizacion = result.getInt("idlocalizacion");
+			this.ciudad = result.getString("ciudad");
+			this.calle = result.getString("calle");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

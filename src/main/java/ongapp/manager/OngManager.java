@@ -11,12 +11,15 @@ import java.util.List;
 
 import ongapp.dao.Ong;
 
-
 public class OngManager {
-	
+
+	/**
+	 * @return Devuelve lista de todas las ongs
+	 */
 	public List<Ong> findAll(Connection con) {
 		try (Statement stmt = con.createStatement()) {
-			ResultSet result = stmt.executeQuery("SELECT * FROM ong o JOIN localizacion l on (o.localizacionid = l.id)");
+			ResultSet result = stmt
+					.executeQuery("SELECT * FROM ong");
 			result.beforeFirst();
 
 			List<Ong> ong = new ArrayList<>();
@@ -24,7 +27,47 @@ public class OngManager {
 			while (result.next()) {
 				ong.add(new Ong(result));
 			}
-			con.close();
+			return ong;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return Collections.emptyList();
+		}
+	}
+	/**
+	 * @return Devuelve las ong dado el nombre en el argumento 
+	 */
+	public List<Ong> findByNombre(Connection con, String nombre) {
+
+		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE nombre LIKE %?%")) {
+			prepStmt.setString(1, nombre);
+			ResultSet result = prepStmt.executeQuery();
+			result.beforeFirst();
+			List<Ong> ong = new ArrayList<>();
+
+			while (result.next()) {
+				ong.add(new Ong(result));
+			}
+			return ong;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return Collections.emptyList();
+		}
+	}
+
+	/**
+	 * @return Devuelve las ong dada la ciudad del argumento
+	 */
+	public List<Ong> findByCiudad(Connection con, String ciudad) {
+
+		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE ciudad LIKE %?%")) {
+			prepStmt.setString(1, ciudad);
+			ResultSet result = prepStmt.executeQuery();
+			result.beforeFirst();
+			List<Ong> ong = new ArrayList<>();
+
+			while (result.next()) {
+				ong.add(new Ong(result));
+			}
 			return ong;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -32,26 +75,21 @@ public class OngManager {
 		}
 	}
 	
-	//Localiza las ong por localizacion(distancia del usuario)
-	public void findByIdLocalizacion(Connection con, int idLocalizacion) {
+	public List<Ong> findByTipo(Connection con, String tipo) {
 
-		try (PreparedStatement prepStmt = con
-				.prepareStatement("SELECT * FROM ong o RIGHT JOIN localizacion l on (o.localizacionid = l.id) where idlocalizacion like ?")) {
-			con.setAutoCommit(false);
-			prepStmt.setInt(1, idLocalizacion);
-			prepStmt.executeUpdate();
+		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE tipo LIKE %?%")) {
+			prepStmt.setString(1, tipo);
+			ResultSet result = prepStmt.executeQuery();
+			result.beforeFirst();
+			List<Ong> ong = new ArrayList<>();
 
-			con.commit();
-			con.close();
-		} catch (SQLException e) {
-			try {
-				con.rollback();
-			} catch (SQLException e1) {
-				
-				e1.printStackTrace();
+			while (result.next()) {
+				ong.add(new Ong(result));
 			}
+			return ong;
+		} catch (SQLException e) {
 			e.printStackTrace();
+			return Collections.emptyList();
 		}
-
 	}
 }

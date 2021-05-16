@@ -8,7 +8,6 @@ public class Usuario {
 	String email;
 	String username;
 	String contraseña;
-	int idLocalizacion;
 
 	public Usuario(ResultSet result) {
 		try {
@@ -16,7 +15,6 @@ public class Usuario {
 			this.email = result.getString("email");
 			this.username = result.getString("username");
 			this.contraseña = result.getString("contraseña");
-			this.idLocalizacion = result.getInt("idlocalizacion");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

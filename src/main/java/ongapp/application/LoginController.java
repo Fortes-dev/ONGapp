@@ -52,7 +52,7 @@ public class LoginController {
 				&& password.getText().equals
 				(new UsuarioManager().findLoginPassword(con, password.getText()))) {
 			try {
-				escena.switchToSceneRegister(event);
+				escena.switchToPrincipal(event);
 				con.close();
 			} catch (IOException e) {
 				e.printStackTrace();
