@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+	prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="ongapp.application.SceneController">
+	<children>
+		<AnchorPane layoutX="-8.0" layoutY="-4.0"
+			prefHeight="407.0" prefWidth="609.0"
+			style="-fx-background-color: #E9D57E;">
+			<children>
+				<Button layoutX="191.0" layoutY="26.0"
+					mnemonicParsing="false" onAction="#switchToSedes" prefHeight="57.0"
+					prefWidth="199.0" text="ONG Offices (Sedes)" />
+				<Button layoutX="191.0" layoutY="293.0"
+					mnemonicParsing="false" onAction="#switchToSchools"
+					prefHeight="57.0" prefWidth="199.0" text="Schools" />
+				<Button layoutX="191.0" layoutY="204.0"
+					mnemonicParsing="false" onAction="#switchToHealth"
+					prefHeight="57.0" prefWidth="199.0" text="Health" />
+				<Button layoutX="191.0" layoutY="118.0"
+					mnemonicParsing="false" onAction="#switchToEmbajadas"
+					prefHeight="57.0" prefWidth="199.0" text="Embassies" />
+			</children>
+		</AnchorPane>
+	</children>
+</AnchorPane>
