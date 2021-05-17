@@ -5,6 +5,7 @@ package ongapp.application;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -48,8 +49,7 @@ public class HealthController {
 
 	//Eliminar ultima celda, creando nuevo objeto insertando los datos que yo quiero que se muestren. Usa stream y maps, a partir
 	//de la lista de abajo
-	
-	
+
 	public void makeTable(List<Ong>lista) {
 		ObservableList<Ong> listaObservable = FXCollections.observableArrayList(lista);
 		tabla.setItems(listaObservable);
@@ -59,6 +59,7 @@ public class HealthController {
 		websiteCol.setCellValueFactory(c-> new SimpleStringProperty(c.getValue().getWeb()));
 		cityCol.setCellValueFactory(c-> new SimpleStringProperty(c.getValue().getCiudad()));
 		locationCol.setCellValueFactory(c-> new SimpleStringProperty(c.getValue().getCalle()));
+		
 	}
 
 	@FXML

@@ -39,22 +39,6 @@ public class SceneController {
 		stage.show();
 	}
 	
-	public void switchToSedes(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Sedes.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
-	public void switchToEmbajadas(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Embajadas.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
 	public void switchToHealth(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Health.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -63,12 +47,5 @@ public class SceneController {
 		stage.show();
 	}
 	
-	public void switchToSchools(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Schools.fxml"));
 
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
 }

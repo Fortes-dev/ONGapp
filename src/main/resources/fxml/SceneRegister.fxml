@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -7,15 +8,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: greenyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.RegisterController">
    <children>
-      <ImageView fitHeight="162.0" fitWidth="157.0" layoutX="124.0" layoutY="71.0">
+      <ImageView fitHeight="162.0" fitWidth="157.0" layoutX="125.0" layoutY="82.0">
          <image>
             <Image url="@../images/kisspng-hand-drawing-6515307621006106.png" />
          </image>
       </ImageView>
-      <TextField fx:id="email" layoutX="76.0" layoutY="265.0" prefHeight="39.0" prefWidth="252.0" promptText="Email" />
-      <TextField fx:id="username" layoutX="76.0" layoutY="313.0" prefHeight="39.0" prefWidth="252.0" promptText="Username" />
-      <PasswordField fx:id="password" layoutX="76.0" layoutY="359.0" prefHeight="39.0" prefWidth="252.0" promptText="Password" />
-      <PasswordField fx:id="passwordRepeat" layoutX="76.0" layoutY="406.0" prefHeight="39.0" prefWidth="252.0" promptText="Repeat Password" />
-      <Button fx:id="buttonSubmit" layoutX="247.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleSubmit" text="Submit" />
+      <TextField fx:id="email" layoutX="77.0" layoutY="289.0" prefHeight="39.0" prefWidth="252.0" promptText="Email" />
+      <TextField fx:id="username" layoutX="77.0" layoutY="337.0" prefHeight="39.0" prefWidth="252.0" promptText="Username" />
+      <PasswordField fx:id="password" layoutX="77.0" layoutY="383.0" prefHeight="39.0" prefWidth="252.0" promptText="Password" />
+      <PasswordField fx:id="passwordRepeat" layoutX="77.0" layoutY="430.0" prefHeight="39.0" prefWidth="252.0" promptText="Repeat Password" />
+      <HBox layoutX="246.0" layoutY="457.0" prefHeight="39.0" prefWidth="82.0" />
+      <Text fill="#27541e" layoutX="77.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register form" />
+      <Button fx:id="buttonSubmit" layoutX="247.0" layoutY="477.0" mnemonicParsing="false" onAction="#handleSubmit" text="Submit" />
+      <Button fx:id="back" layoutX="34.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
    </children>
 </AnchorPane>

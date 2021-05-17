@@ -1,6 +1,5 @@
 package ongapp.application;
 
-import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,15 +9,12 @@ import javafx.scene.control.Button;
 public class PrincipalController {
 
 	// Botones para el menú principal
-
 	@FXML
-	Button buttonEmbajada;
+	Button back;
 	@FXML
-	Button buttonSedes;
+	Button ongManager;
 	@FXML
 	Button buttonHealth;
-	@FXML
-	Button buttonSchools;
 	@FXML
 	SceneController escena = new SceneController();
 
@@ -26,22 +22,15 @@ public class PrincipalController {
 	 * Botón de acceso a las sedes.
 	 */
 	@FXML
-	public void handleButtonSedes(ActionEvent event) throws Exception {
-
-		escena.switchToSedes(event);
+	public void handleButtonBack(ActionEvent event) throws Exception {
+		if (event.getSource() == back) {
+		escena.switchToSceneLogin(event);
+		}
 	}
+	
 
 	/**
-	 * Botón de acceso a las embajadas.
-	 */
-	@FXML
-	public void handleButtonEmbajadas(ActionEvent event) throws Exception {
-
-		escena.switchToEmbajadas(event);
-	}
-
-	/**
-	 * Botón de acceso a salud.
+	 * Botón de acceso al buscador de ONGs.
 	 */
 	@FXML
 	public void handleButtonHealth(ActionEvent event) throws Exception {
@@ -50,12 +39,5 @@ public class PrincipalController {
 		}
 	}
 
-	/**
-	 * Botón de acceso a educación.
-	 */
-	@FXML
-	public void handleButtonSchools(ActionEvent event) throws Exception {
 
-		escena.switchToSchools(event);
-	}
 }

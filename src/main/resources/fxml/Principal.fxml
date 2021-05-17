@@ -6,38 +6,33 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.PrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.PrincipalController">
 	<children>
-		<AnchorPane layoutX="-8.0" layoutY="-4.0" prefHeight="407.0" prefWidth="609.0" style="-fx-background-color: greenyellow;">
+		<AnchorPane layoutX="-8.0" layoutY="-4.0" prefHeight="407.0" prefWidth="515.0" style="-fx-background-color: greenyellow;">
 			<children>
-				<Button fx:id="handleButtonSedes" layoutX="191.0" layoutY="26.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="199.0" text="ONG Offices">
+				<Button fx:id="buttonHealth" layoutX="158.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleButtonHealth" prefHeight="57.0" prefWidth="199.0" text="ONG Finder">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <effect>
                   <DropShadow color="#009e05" />
                </effect></Button>
-				<Button fx:id="handleButtonSchools" layoutX="191.0" layoutY="293.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="199.0" text="Schools">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="15.0" />
-               </font>
+            <Button fx:id="ongManager" layoutX="158.0" layoutY="128.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="199.0" text="ONG Manager">
                <effect>
                   <DropShadow color="#009e05" />
-               </effect></Button>
-				<Button fx:id="buttonHealth" layoutX="191.0" layoutY="204.0" mnemonicParsing="false" onAction="#handleButtonHealth" prefHeight="57.0" prefWidth="199.0" text="Health">
+               </effect>
                <font>
-                  <Font name="Comic Sans MS Bold" size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
+            </Button>
+            <Button fx:id="back" layoutX="41.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleButtonBack" prefHeight="34.0" prefWidth="73.0" text="Back">
                <effect>
                   <DropShadow color="#009e05" />
-               </effect></Button>
-				<Button fx:id="handleButtonEmbajadas" layoutX="191.0" layoutY="118.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="199.0" text="Embassies">
+               </effect>
                <font>
-                  <Font name="Comic Sans MS Bold" size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
-               <effect>
-                  <DropShadow color="#009e05" />
-               </effect></Button>
+            </Button>
 			</children>
 		</AnchorPane>
 	</children>

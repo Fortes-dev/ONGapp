@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -8,15 +9,23 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: greenyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.LoginController">
 	<children>
-		<TextField fx:id="username" layoutX="117.0" layoutY="319.0" prefHeight="39.0" prefWidth="165.0" promptText="Username" />
-		<PasswordField fx:id="password" layoutX="118.0" layoutY="376.0" prefHeight="35.0" prefWidth="165.0" promptText="Password" />
-		<Button fx:id="buttonLogin" layoutX="214.0" layoutY="433.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
-		<Button fx:id="buttonRegister" layoutX="117.0" layoutY="433.0" mnemonicParsing="false" onAction="#handleRegister" text="Register" />
-		<ImageView fitHeight="162.0" fitWidth="157.0" layoutX="121.0" layoutY="128.0">
+		<ImageView fitHeight="162.0" fitWidth="157.0" layoutX="122.0" layoutY="83.0">
 			<image>
 				<Image url="@../images/kisspng-hand-drawing-6515307621006106.png" />
 			</image>
 		</ImageView>
+      <Text fill="#27541e" layoutX="118.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inmigrapp" textAlignment="CENTER" wrappingWidth="165.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+		<TextField fx:id="username" layoutX="117.0" layoutY="319.0" prefHeight="39.0" prefWidth="165.0" promptText="Username" />
+		<PasswordField fx:id="password" layoutX="118.0" layoutY="376.0" prefHeight="35.0" prefWidth="165.0" promptText="Password" />
+      <HBox layoutX="117.0" layoutY="428.0" prefHeight="39.0" prefWidth="165.0">
+         <children>
+      		<Button fx:id="buttonRegister" mnemonicParsing="false" onAction="#handleRegister" prefHeight="39.0" prefWidth="95.0" text="Register" />
+      		<Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#handleLogin" prefHeight="39.0" prefWidth="78.0" text="Login" />
+         </children>
+      </HBox>
 	</children>
 </AnchorPane>
-

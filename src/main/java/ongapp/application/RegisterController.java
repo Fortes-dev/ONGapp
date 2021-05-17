@@ -22,6 +22,8 @@ public class RegisterController {
 	@FXML
 	Button buttonSubmit;
 	@FXML
+	Button back;
+	@FXML
 	TextField email;
 	@FXML
 	TextField username;
@@ -69,6 +71,12 @@ public class RegisterController {
 			alert.getDialogPane().setHeaderText("Register error");
 			alert.getDialogPane().setContentText("Insert a valid email");
 			alert.showAndWait();
+		}
+	}
+	
+	public void handleBack(ActionEvent event) throws IOException {
+		if(event.getSource()==back) {
+			escena.switchToSceneLogin(event);
 		}
 	}
 }
