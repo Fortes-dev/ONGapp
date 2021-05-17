@@ -3,6 +3,11 @@ package ongapp.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Ong {
 	int id;
 	String nombre;

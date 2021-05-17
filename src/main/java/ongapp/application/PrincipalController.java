@@ -1,8 +1,6 @@
 package ongapp.application;
 
-
 import java.io.IOException;
-
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,8 +45,9 @@ public class PrincipalController {
 	 */
 	@FXML
 	public void handleButtonHealth(ActionEvent event) throws Exception {
-
-		escena.switchToHealth(event);
+		if (event.getSource() == buttonHealth) {
+			escena.switchToHealth(event);
+		}
 	}
 
 	/**

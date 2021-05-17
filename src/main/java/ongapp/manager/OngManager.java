@@ -38,8 +38,8 @@ public class OngManager {
 	 */
 	public List<Ong> findByNombre(Connection con, String nombre) {
 
-		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE nombre LIKE %?%")) {
-			prepStmt.setString(1, nombre);
+		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE nombre LIKE ?")) {
+			prepStmt.setString(1, "%"+nombre+"%");
 			ResultSet result = prepStmt.executeQuery();
 			result.beforeFirst();
 			List<Ong> ong = new ArrayList<>();
@@ -59,8 +59,8 @@ public class OngManager {
 	 */
 	public List<Ong> findByCiudad(Connection con, String ciudad) {
 
-		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE ciudad LIKE %?%")) {
-			prepStmt.setString(1, ciudad);
+		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE ciudad LIKE ?")) {
+			prepStmt.setString(1, "%"+ciudad+"%");
 			ResultSet result = prepStmt.executeQuery();
 			result.beforeFirst();
 			List<Ong> ong = new ArrayList<>();
@@ -77,8 +77,8 @@ public class OngManager {
 	
 	public List<Ong> findByTipo(Connection con, String tipo) {
 
-		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE tipo LIKE %?%")) {
-			prepStmt.setString(1, tipo);
+		try (PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM ong WHERE tipo LIKE ?")) {
+			prepStmt.setString(1, "%"+tipo+"%");
 			ResultSet result = prepStmt.executeQuery();
 			result.beforeFirst();
 			List<Ong> ong = new ArrayList<>();

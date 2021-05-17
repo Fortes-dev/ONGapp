@@ -17,6 +17,7 @@ import ongapp.manager.UsuarioManager;
  * @author carlos.fortes.medina
  * Controlador de la ventana Register
  */
+
 public class RegisterController {
 	@FXML
 	Button buttonSubmit;
@@ -37,7 +38,8 @@ public class RegisterController {
 	@FXML
 	public void handleSubmit(ActionEvent event) throws SQLException, ClassNotFoundException {
 		Connection con = new Conector().getMySQLConnection();
-		if(email.getText()!=null&&email.getText().endsWith("@gmail.com")) {
+		if(email.getText()!=null&&email.getText().endsWith("@gmail.com")
+				||email.getText().endsWith("@outlook.com")) {
 			if(username.getText()!=null) {
 				if(password.getText()!=null&&password.getText().equals(passwordRepeat.getText())) {
 					try {
