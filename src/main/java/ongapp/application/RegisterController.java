@@ -19,6 +19,9 @@ import ongapp.manager.UsuarioManager;
  */
 
 public class RegisterController {
+	/**
+	 * Elementos de la escena
+	 */
 	@FXML
 	Button buttonSubmit;
 	@FXML
@@ -33,11 +36,16 @@ public class RegisterController {
 	PasswordField passwordRepeat;
 	@FXML
 	SceneController escena = new SceneController();
-	
+	/**
+	 * Constante final de error
+	 */
 	private static final String ERROR = "Register error";
 	
 	/**
-	 * Botón de submit, registra en la base de datos un nuevo usuario
+	 * Registra un nuevo usuario
+	 * @param event
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
 	 */
 	@FXML
 	public void handleSubmit(ActionEvent event) throws SQLException, ClassNotFoundException {
@@ -75,7 +83,11 @@ public class RegisterController {
 			alert.showAndWait();
 		}
 	}
-	
+	/**
+	 * Nos devuelve a la escena anterior
+	 * @param event
+	 * @throws IOException
+	 */
 	public void handleBack(ActionEvent event) throws IOException {
 		if(event.getSource()==back) {
 			escena.switchToSceneLogin(event);

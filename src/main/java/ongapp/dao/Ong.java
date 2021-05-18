@@ -8,14 +8,27 @@ import lombok.Setter;
 
 @Getter
 @Setter
+
+/**
+ * DAO de ONG
+ * @author carlos.fortes.medina
+ *
+ */
 public class Ong {
+	/**
+	 * Elementos de la tabla ong en la base de datos
+	 */
 	int id;
 	String nombre;
 	String tipo;
 	String web;
 	String ciudad;
 	String calle;
-
+	
+	/**
+	 * Constructor del dao
+	 * @param result Entrada de tipo ResultSet
+	 */
 	public Ong(ResultSet result) {
 		try {
 			this.id = result.getInt("id");

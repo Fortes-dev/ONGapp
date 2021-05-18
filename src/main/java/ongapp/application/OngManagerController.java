@@ -12,8 +12,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import ongapp.conector.Conector;
 import ongapp.manager.OngManager;
-
+/**
+ * Controlador del CRUD de ongs
+ * @author carlos.fortes.medina
+ *
+ */
 public class OngManagerController {
+	/**
+	 * Elementos de la escena
+	 */
 	@FXML
 	Button submit;
 	@FXML
@@ -48,14 +55,23 @@ public class OngManagerController {
 	TextField addressModify;
 	@FXML
 	SceneController escena = new SceneController();
-	
+	/**
+	 * Nos devuelve a la escena anterior
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	public void handleBack(ActionEvent event) throws IOException {
 		if(event.getSource()==back) {
 			escena.switchToPrincipal(event);
 		}
 	}
-	
+	/**
+	 * Inserta una nueva ong
+	 * @param event
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	@FXML
 	public void handleSubmit(ActionEvent event) throws ClassNotFoundException, SQLException {
 		Connection con = new Conector().getMySQLConnection();
@@ -81,7 +97,12 @@ public class OngManagerController {
 			alert.showAndWait();
 		}
 	}
-	
+	/**
+	 * Borra una ong
+	 * @param event
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	@FXML
 	public void handleDelete(ActionEvent event) throws ClassNotFoundException, SQLException {
 		
@@ -105,7 +126,12 @@ public class OngManagerController {
 			alert.showAndWait();
 		}
 	}
-	
+	/**
+	 * Modifica ong existente
+	 * @param event
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	@FXML
 	public void handleModify(ActionEvent event) throws ClassNotFoundException, SQLException {
 		

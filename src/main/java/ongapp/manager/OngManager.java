@@ -10,11 +10,17 @@ import java.util.Collections;
 import java.util.List;
 
 import ongapp.dao.Ong;
-
+/**
+ * Manager de la tabla ONG en SQL
+ * @author carlos.fortes.medina
+ *
+ */
 public class OngManager {
 
 	/**
-	 * @return Devuelve lista de todas las ongs
+	 * Busca todas las ongs
+	 * @param con Conexion a SQL
+	 * @return Lista de todas las ong
 	 */
 	public List<Ong> findAll(Connection con) {
 		try (Statement stmt = con.createStatement()) {
@@ -34,7 +40,10 @@ public class OngManager {
 		}
 	}
 	/**
-	 * @return Devuelve las ong dado el nombre en el argumento 
+	 * Busca ongs por nombre
+	 * @param con Conexion a SQL
+	 * @param nombre entrada String nombre de ong
+	 * @return Lista de todas las ong dependiendo de la entrada dada.
 	 */
 	public List<Ong> findByNombre(Connection con, String nombre) {
 
@@ -55,7 +64,10 @@ public class OngManager {
 	}
 
 	/**
-	 * @return Devuelve las ong dada la ciudad del argumento
+	 * Busca ongs por ciudad
+	 * @param con Conexion a SQL
+	 * @param ciudad entrada String ciudad de ong
+	 * @return Lista de todas las ong dependiendo de la entrada dada
 	 */
 	public List<Ong> findByCiudad(Connection con, String ciudad) {
 
@@ -75,7 +87,10 @@ public class OngManager {
 		}
 	}
 	/**
-	 * @return Devuelve las ong dado el tipo del argumento
+	 * Busca ongs por tipo
+	 * @param con Conexion SQL
+	 * @param tipo entrada String tipo de ong
+	 * @return Lista de todas las ong por entrada dada
 	 */
 	public List<Ong> findByTipo(Connection con, String tipo) {
 
@@ -95,7 +110,13 @@ public class OngManager {
 		}
 	}
 	/**
-	 * Crea un nuevo registro de Ong
+	 * Crea una nueva ong
+	 * @param con Conexion SQL
+	 * @param nombre Entrada de nombre de la ong
+	 * @param tipo Entrada de tipo de la ong
+	 * @param web Entrada de web de la ong
+	 * @param ciudad Entrada de ciudad de la ong
+	 * @param calle Entrada de calle de la ong
 	 */
 	public void createOng(Connection con, String nombre, String tipo, String web, String ciudad, String calle) {
 
@@ -123,7 +144,9 @@ public class OngManager {
 		}
 
 	}
-	
+	/**
+	 * Modifica una ong
+	 */
 	public void modifyOng(Connection con, String newNombre, String tipo, String web, String ciudad, String calle, String nombre) {
 
 		try (PreparedStatement prepStmt = con.prepareStatement("UPDATE ong SET nombre=?, tipo=?, web=?, ciudad=?, calle=? where nombre=?")) {

@@ -8,12 +8,23 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-
+/**
+ * Conector a la base de datos
+ * @author carlos.fortes.medina
+ *
+ */
 public class Conector {
 	@Setter
 	@Getter
+	
+	/**
+	 * Variable para guardar las propiedades
+	 */
 	Properties prop = new Properties();
-
+	
+	/**
+	 * Constructor del conector
+	 */
 	public Conector() {
 		try {
 			prop.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
@@ -40,6 +51,10 @@ public class Conector {
 		return null;
 	}
 	
+	/**
+	 * Nos crea un String cargando las constantes de la clase MySQLConstants
+	 * @return
+	 */
 	private String getURL() {
 		return new StringBuilder().append(prop.getProperty(MySQLConstants.URL_PREFIX))
 		.append(prop.getProperty(MySQLConstants.URL_HOST)).append(":")
@@ -49,5 +64,4 @@ public class Conector {
 		.append(prop.getProperty(MySQLConstants.PASSWD)).append("&useSSL=")
 		.append(prop.getProperty(MySQLConstants.URL_SSL)).toString();
 		}
-	// --- jdbc:mysql://localhost:3307/ongapp?user=sa&password=root&userSSL=false
 }

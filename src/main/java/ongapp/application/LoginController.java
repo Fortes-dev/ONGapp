@@ -19,7 +19,9 @@ import ongapp.manager.UsuarioManager;
  *	Controlador de la ventana de Login
  */
 public class LoginController {
-
+/**
+ * Elementos de la escena
+ */
 	@FXML
 	Button buttonLogin;
 	@FXML
@@ -30,9 +32,11 @@ public class LoginController {
 	PasswordField password;
 	@FXML
 	SceneController escena = new SceneController();
-
+	
 	/**
-	 * Botón de registo, nos lleva a la ventana Register
+	 * Dirige a la escena de registro
+	 * @param event
+	 * @throws Exception
 	 */
 	@FXML
 	public void handleRegister(ActionEvent event) throws Exception {
@@ -42,7 +46,10 @@ public class LoginController {
 		}
 	}
 	/**
-	 * Botón de logeo, si el input es correcto, nos lleva a la ventana Main.
+	 * Confirma que el usuario existe y cambia a la escena principal.
+	 * @param event
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
 	 */
 	@FXML
 	public void handleLogin(ActionEvent event) throws SQLException, ClassNotFoundException {

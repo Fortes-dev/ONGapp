@@ -21,10 +21,16 @@ import ongapp.conector.Conector;
 import ongapp.dao.Ong;
 import ongapp.manager.OngManager;
 
+/**
+ * @author carlos.fortes.medina
+ *	Controlador de la lista de ongs
+ */
 
-
-public class HealthController {
+public class OngFinderTableController {
 	
+	/**
+	 * Elementos de la escena
+	 */
 	@FXML
 	Button goBack;
 	@FXML
@@ -45,10 +51,11 @@ public class HealthController {
 	private TableColumn<Ong, String> cityCol;
 	@FXML
 	private TableColumn<Ong, String> locationCol;
-
-	//Eliminar ultima celda, creando nuevo objeto insertando los datos que yo quiero que se muestren. Usa stream y maps, a partir
-	//de la lista de abajo
-
+	
+	/**
+	 * Rellena los campos de la TableView
+	 * @param lista	Lista a partir de la que rellenar los campos de la tabla
+	 */
 	public void makeTable(List<Ong>lista) {
 		ObservableList<Ong> listaObservable = FXCollections.observableArrayList(lista);
 		tabla.setItems(listaObservable);
@@ -58,9 +65,13 @@ public class HealthController {
 		websiteCol.setCellValueFactory(c-> new SimpleStringProperty(c.getValue().getWeb()));
 		cityCol.setCellValueFactory(c-> new SimpleStringProperty(c.getValue().getCiudad()));
 		locationCol.setCellValueFactory(c-> new SimpleStringProperty(c.getValue().getCalle()));
-		
 	}
-
+	
+	/**
+	 * Método para inicializar la tabla en la escena
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	@FXML
 	public void initialize() throws ClassNotFoundException, SQLException {
 		Connection con = new Conector().getMySQLConnection();
@@ -72,7 +83,11 @@ public class HealthController {
 		box.setValue("All");
 	}
 	
-	
+	/**
+	 * Busca en la barra de búsqueda
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	@FXML
 	public void searchBy() throws ClassNotFoundException, SQLException {
 		if (box.getValue().equals("Name")) {
@@ -97,7 +112,12 @@ public class HealthController {
 			makeTable(lista);
 		}
 	}
-
+	
+	/**
+	 * Nos devuelve a la escena anterior.
+	 * @param event 
+	 * @throws IOException
+	 */
 	@FXML
 	public void handleGoBack(ActionEvent event) throws IOException {
 		if(event.getSource()==goBack) {

@@ -55,6 +55,23 @@ public class UsuarioManager {
 			return null;
 		}
 	}
+	/**
+	 * @return Nos devuelve un usuario para confirmar login
+	 */
+	public String findLoginRol(Connection con, String username) {
+		try (PreparedStatement prepStmt = con.prepareStatement("select rol from usuario where username = ?")) {
+
+			prepStmt.setString(1, username);
+
+			ResultSet result = prepStmt.executeQuery();
+			result.next();
+			return result.getString("username");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 	/**
 	 * @return Nos devuelve la password
