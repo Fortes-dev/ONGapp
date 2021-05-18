@@ -17,7 +17,7 @@
                <effect>
                   <DropShadow color="#009e05" />
                </effect></Button>
-            <Button fx:id="ongManager" layoutX="158.0" layoutY="128.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="199.0" text="ONG Manager">
+            <Button fx:id="ongManager" layoutX="158.0" layoutY="128.0" mnemonicParsing="false" onAction="#handleButtonOngManager" prefHeight="57.0" prefWidth="199.0" text="ONG Manager">
                <effect>
                   <DropShadow color="#009e05" />
                </effect>

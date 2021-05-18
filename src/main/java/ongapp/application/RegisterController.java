@@ -34,16 +34,18 @@ public class RegisterController {
 	@FXML
 	SceneController escena = new SceneController();
 	
+	private static final String ERROR = "Register error";
+	
 	/**
 	 * Botón de submit, registra en la base de datos un nuevo usuario
 	 */
 	@FXML
 	public void handleSubmit(ActionEvent event) throws SQLException, ClassNotFoundException {
 		Connection con = new Conector().getMySQLConnection();
-		if(email.getText()!=null&&email.getText().endsWith("@gmail.com")
+		if(email.getText().length()!=0&&email.getText().endsWith("@gmail.com")
 				||email.getText().endsWith("@outlook.com")) {
-			if(username.getText()!=null) {
-				if(password.getText()!=null&&password.getText().equals(passwordRepeat.getText())) {
+			if(username.getText().length()!=0) {
+				if(password.getText().length()!=0&&password.getText().equals(passwordRepeat.getText())) {
 					try {
 						new UsuarioManager().createUsuario(con, email.getText(), username.getText(), password.getText());
 						escena.switchToSceneLogin(event);
@@ -54,21 +56,21 @@ public class RegisterController {
 				} else {
 					AlertType type = AlertType.WARNING;
 					Alert alert = new Alert(type, "");
-					alert.getDialogPane().setHeaderText("Register error");
+					alert.getDialogPane().setHeaderText(ERROR);
 					alert.getDialogPane().setContentText("Password confirmation does not match");
 					alert.showAndWait();
 				}
 			} else {
 				AlertType type = AlertType.WARNING;
 				Alert alert = new Alert(type, "");
-				alert.getDialogPane().setHeaderText("Register error");
+				alert.getDialogPane().setHeaderText(ERROR);
 				alert.getDialogPane().setContentText("Insert a valid username");
 				alert.showAndWait();
 			}
 		} else {
 			AlertType type = AlertType.WARNING;
 			Alert alert = new Alert(type, "");
-			alert.getDialogPane().setHeaderText("Register error");
+			alert.getDialogPane().setHeaderText(ERROR);
 			alert.getDialogPane().setContentText("Insert a valid email");
 			alert.showAndWait();
 		}

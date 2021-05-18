@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ongapp.application.OngManagerController">
+   <children>
+      <AnchorPane prefHeight="622.0" prefWidth="770.0" style="-fx-background-color: greenyellow;">
+         <children>
+            <ImageView fitHeight="122.0" fitWidth="122.0" layoutX="170.0" layoutY="18.0">
+               <image>
+                  <Image url="@../images/kisspng-hand-drawing-6515307621006106.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="typeRegister" layoutX="30.0" layoutY="225.0" prefHeight="39.0" prefWidth="252.0" promptText="Type" />
+            <TextField fx:id="nameRegister" layoutX="30.0" layoutY="180.0" prefHeight="39.0" prefWidth="252.0" promptText="Name" />
+            <Text fill="#27541e" layoutX="30.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register ONG" />
+            <Button fx:id="back" layoutX="41.0" layoutY="59.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="43.0" prefWidth="76.0" text="Back" />
+            <TextField fx:id="nameDelete" layoutX="30.0" layoutY="510.0" prefHeight="39.0" prefWidth="252.0" promptText="Name" />
+            <Button fx:id="delete" layoutX="205.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+            <Text fill="#27541e" layoutX="30.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete ONG" />
+            <Text fill="#27541e" layoutX="465.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify ONG" />
+            <TextField fx:id="nameModify" layoutX="465.0" layoutY="180.0" prefHeight="39.0" prefWidth="252.0" promptText="Name" />
+            <TextField fx:id="newNameModify" layoutX="465.0" layoutY="225.0" prefHeight="39.0" prefWidth="252.0" promptText="New Name" />
+            <TextField fx:id="webRegister" layoutX="30.0" layoutY="270.0" prefHeight="39.0" prefWidth="252.0" promptText="Web" />
+            <TextField fx:id="cityRegister" layoutX="30.0" layoutY="315.0" prefHeight="39.0" prefWidth="252.0" promptText="City" />
+            <TextField fx:id="addressRegister" layoutX="30.0" layoutY="360.0" prefHeight="39.0" prefWidth="252.0" promptText="Address" />
+            <TextField fx:id="typeModify" layoutX="465.0" layoutY="270.0" prefHeight="39.0" prefWidth="252.0" promptText="New Type" />
+            <TextField fx:id="webModify" layoutX="465.0" layoutY="315.0" prefHeight="39.0" prefWidth="252.0" promptText="New Web" />
+            <TextField fx:id="cityModify" layoutX="465.0" layoutY="360.0" prefHeight="39.0" prefWidth="252.0" promptText="New City" />
+            <TextField fx:id="addressModify" layoutX="465.0" layoutY="405.0" prefHeight="39.0" prefWidth="252.0" promptText="New Address" />
+            <Button fx:id="submit" layoutX="200.0" layoutY="405.0" mnemonicParsing="false" onAction="#handleSubmit" text="Submit" />
+            <Button fx:id="modify" layoutX="635.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleModify" text="Modify" />
+            <Text fill="#27541e" layoutX="292.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ong Manager">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

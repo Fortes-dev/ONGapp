@@ -77,12 +77,13 @@ public class UsuarioManager {
 	 */
 	public void createUsuario(Connection con, String email, String username, String contraseña) {
 
-		try (PreparedStatement prepStmt = con.prepareStatement("INSERT INTO usuario (email, username, contraseña) VALUES (?, ?, ?)")) {
+		try (PreparedStatement prepStmt = con.prepareStatement("INSERT INTO usuario (email, username, contraseña, rol) VALUES (?, ?, ?, ?)")) {
 			con.setAutoCommit(false);
 
 			prepStmt.setString(1, email);
 			prepStmt.setString(2, username);
 			prepStmt.setString(3, contraseña);
+			prepStmt.setString(4, "user");
 
 			prepStmt.executeUpdate();
 
@@ -97,18 +98,44 @@ public class UsuarioManager {
 			}
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * @return Crea un nuevo usuario de modo administrador
+	 */
+	public void createUsuarioAdmin(Connection con, String email, String username, String contraseña, String rol) {
 
+		try (PreparedStatement prepStmt = con.prepareStatement("INSERT INTO usuario (email, username, contraseña, rol) VALUES (?, ?, ?, ?)")) {
+			con.setAutoCommit(false);
+
+			prepStmt.setString(1, email);
+			prepStmt.setString(2, username);
+			prepStmt.setString(3, contraseña);
+			prepStmt.setString(4, rol);
+
+			prepStmt.executeUpdate();
+
+			con.commit();
+
+		} catch (SQLException e) {
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
 	}
 	
 	/**
 	 * @return Borra un registro de usuario(buscamos por nombre)
 	 */
-	public void deleteUsuario(Connection con, int id, String username) {
+	public void deleteUsuario(Connection con, String username) {
 		try (PreparedStatement prepStmt = con
-				.prepareStatement("DELETE FROM usuario WHERE id like ? or username like ?")) {
+				.prepareStatement("DELETE FROM usuario WHERE username = ?")) {
 			con.setAutoCommit(false);
-			prepStmt.setInt(1, id);
-			prepStmt.setString(2, username);
+			prepStmt.setString(1, username);
 			prepStmt.executeUpdate();
 
 			con.commit();
