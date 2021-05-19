@@ -11,7 +11,7 @@ import lombok.Setter;
 
 /**
  * DAO de ONG
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *
  */
 public class Ong {

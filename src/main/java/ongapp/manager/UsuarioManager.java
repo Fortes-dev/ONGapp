@@ -12,12 +12,13 @@ import java.util.List;
 import ongapp.dao.Usuario;
 
 /**
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *	Manager de la tabla Usuario
  */
 public class UsuarioManager {
 	
 	/**
+	 * @param con Conexion db
 	 * @return Todos los usuarios
 	 */
 	public List<Usuario> findAll(Connection con) {
@@ -39,6 +40,8 @@ public class UsuarioManager {
 	}
 	
 	/**
+	 * @param con Conexion db
+	 * @param username nombre usuario
 	 * @return Nos devuelve el username
 	 */
 	public String findLoginUser(Connection con, String username) {
@@ -56,6 +59,8 @@ public class UsuarioManager {
 		}
 	}
 	/**
+	 * @param con Conexion db
+	 * @param username nombre usuario
 	 * @return Nos devuelve un usuario para confirmar login
 	 */
 	public String findLoginRol(Connection con, String username) {
@@ -74,6 +79,8 @@ public class UsuarioManager {
 	}
 	
 	/**
+	 * @param con Conexion db
+	 * @param password contraseña usuario
 	 * @return Nos devuelve la password
 	 */
 	public String findLoginPassword(Connection con, String password) {
@@ -90,16 +97,20 @@ public class UsuarioManager {
 		}
 	}
 	/**
+	 * @param con Conexion db
+	 * @param email email usuario
+	 * @param username nombre usuario
+	 * @param password contraseña usuario
 	 * @return Crea un nuevo usuario
 	 */
-	public void createUsuario(Connection con, String email, String username, String contraseña) {
+	public void createUsuario(Connection con, String email, String username, String password) {
 
 		try (PreparedStatement prepStmt = con.prepareStatement("INSERT INTO usuario (email, username, contraseña, rol) VALUES (?, ?, ?, ?)")) {
 			con.setAutoCommit(false);
 
 			prepStmt.setString(1, email);
 			prepStmt.setString(2, username);
-			prepStmt.setString(3, contraseña);
+			prepStmt.setString(3, password);
 			prepStmt.setString(4, "user");
 
 			prepStmt.executeUpdate();
@@ -118,16 +129,21 @@ public class UsuarioManager {
 	}
 	
 	/**
+	 * @param con Conexion db
+	 * @param email email usuario
+	 * @param username nombre usuario
+	 * @param password contraseña usuario
+	 * @param rol rol usuario
 	 * @return Crea un nuevo usuario de modo administrador
 	 */
-	public void createUsuarioAdmin(Connection con, String email, String username, String contraseña, String rol) {
+	public void createUsuarioAdmin(Connection con, String email, String username, String password, String rol) {
 
 		try (PreparedStatement prepStmt = con.prepareStatement("INSERT INTO usuario (email, username, contraseña, rol) VALUES (?, ?, ?, ?)")) {
 			con.setAutoCommit(false);
 
 			prepStmt.setString(1, email);
 			prepStmt.setString(2, username);
-			prepStmt.setString(3, contraseña);
+			prepStmt.setString(3, password);
 			prepStmt.setString(4, rol);
 
 			prepStmt.executeUpdate();
@@ -146,6 +162,8 @@ public class UsuarioManager {
 	}
 	
 	/**
+	 * @param con Conexion db
+	 * @param username nombre usuario
 	 * @return Borra un registro de usuario(buscamos por nombre)
 	 */
 	public void deleteUsuario(Connection con, String username) {

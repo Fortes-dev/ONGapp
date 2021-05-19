@@ -12,8 +12,7 @@ import java.util.List;
 import ongapp.dao.Ong;
 /**
  * Manager de la tabla ONG en SQL
- * @author carlos.fortes.medina
- *
+ * @author carlos.fortes.medina && marco.testa.moreno
  */
 public class OngManager {
 
@@ -145,7 +144,14 @@ public class OngManager {
 
 	}
 	/**
-	 * Modifica una ong
+	 * Modifica ong existente
+	 * @param con Conexion db
+	 * @param newNombre nuevo nombre de ong
+	 * @param tipo tipo de ong
+	 * @param web web de ong
+	 * @param ciudad ciudad de ong
+	 * @param calle calle de ong
+	 * @param nombre nombre de ong
 	 */
 	public void modifyOng(Connection con, String newNombre, String tipo, String web, String ciudad, String calle, String nombre) {
 
@@ -176,7 +182,9 @@ public class OngManager {
 	}
 	
 	/**
-	 * Borra un registro de ong(buscamos por nombre)
+	 * Borra registro de ong
+	 * @param con Conexion db
+	 * @param nombre nombre ong
 	 */
 	public void deleteOng(Connection con, String nombre) {
 		try (PreparedStatement prepStmt = con

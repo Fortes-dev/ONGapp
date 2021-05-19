@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 
 /**
  * Main de la app
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *
  */
 

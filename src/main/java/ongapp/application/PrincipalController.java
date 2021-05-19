@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 /**
  * Controlador de la escena principal
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *
  */
 

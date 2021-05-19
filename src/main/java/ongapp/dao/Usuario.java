@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 /**
  * DAO de usuario
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *
  */
 public class Usuario {

@@ -9,7 +9,7 @@ import javafx.scene.*;
 import javafx.stage.Stage;
 /**
  * Controlador general de escenas
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *
  */
 public class SceneController {

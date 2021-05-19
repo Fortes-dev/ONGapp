@@ -22,7 +22,7 @@ import ongapp.dao.Ong;
 import ongapp.manager.OngManager;
 
 /**
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *	Controlador de la lista de ongs
  */
 

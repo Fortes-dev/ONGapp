@@ -14,7 +14,7 @@ import javafx.scene.control.Alert.AlertType;
 import ongapp.conector.Conector;
 import ongapp.manager.UsuarioManager;
 /**
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  * Controlador de la ventana Register
  */
 

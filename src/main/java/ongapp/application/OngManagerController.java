@@ -14,7 +14,7 @@ import ongapp.conector.Conector;
 import ongapp.manager.OngManager;
 /**
  * Controlador del CRUD de ongs
- * @author carlos.fortes.medina
+ * @author carlos.fortes.medina && marco.testa.moreno
  *
  */
 public class OngManagerController {
