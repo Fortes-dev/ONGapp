@@ -31,7 +31,6 @@ public class UsuarioManager {
 			while (result.next()) {
 				usuarios.add(new Usuario(result));
 			}
-			con.close();
 			return usuarios;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,7 +69,7 @@ public class UsuarioManager {
 
 			ResultSet result = prepStmt.executeQuery();
 			result.next();
-			return result.getString("username");
+			return result.getString("rol");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

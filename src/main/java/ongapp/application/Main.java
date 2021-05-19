@@ -27,6 +27,7 @@ public class Main extends Application {
 			stage.show();
 			stage.setTitle("Inmigrapp");
 			stage.getIcons().add(new Image("images/kisspng-hand-drawing-6515307621006106.png"));
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
