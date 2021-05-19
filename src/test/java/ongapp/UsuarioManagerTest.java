@@ -19,11 +19,13 @@ import ongapp.dao.Usuario;
 import ongapp.manager.UsuarioManager;
 
 
+
 @RunWith(JUnitPlatform.class)
+
 class UsuarioManagerTest {
-	
+
 	private Connection con;
-	
+
 	@BeforeEach
 	void setUp() throws SQLException, ClassNotFoundException {
 		con = new Conector().getMySQLConnection();
@@ -31,14 +33,22 @@ class UsuarioManagerTest {
 		con.createStatement().execute("INSERT INTO `ongapp`.`usuario` (`id`, `email`, `username`, `contraseña`, `rol`) "
 				+ "VALUES ('132', 'prueba@gmail.com', 'prueba', 'prueba', 'admin')");
 	}
-	
+
 	@Test
 	void findAll_ok() throws SQLException {
 		List<Usuario> usuarios = new UsuarioManager().findAll(con);
-		assertTrue(usuarios.size()>0);
+		assertTrue(usuarios.size() > 0);
 		assertFalse(usuarios.isEmpty());
 	}
-	
+
+
+	@Test
+	void findLoginPassword_ok() throws SQLException {
+		String user = new UsuarioManager().findLoginPassword(con, "prueba");
+		assertEquals("prueba", user);
+		assertFalse(user.isEmpty());
+	}
+
 	@Test
 	void findLoginUser_ok() throws SQLException {
 		String user =  new UsuarioManager().findLoginUser(con, "prueba");
@@ -47,23 +57,15 @@ class UsuarioManagerTest {
 	}
 	
 	@Test
-	void findLoginPassword_ok() throws SQLException {
-		String user =  new UsuarioManager().findLoginPassword(con, "prueba");
-		assertEquals("prueba", user);
-		assertFalse(user.isEmpty());
-	}
-	
-	@Test
 	void findLoginRol_ok() throws SQLException {
-		String user =  new UsuarioManager().findLoginRol(con, "prueba");
+		String user = new UsuarioManager().findLoginRol(con, "prueba");
 		assertEquals("admin", user);
 		assertFalse(user.isEmpty());
 	}
-	
+
 	@AfterEach
 	void tearDown() throws SQLException {
 		con.createStatement().execute("DELETE FROM usuario WHERE username = 'prueba'");
 		con.close();
 	}
-
 }
