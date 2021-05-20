@@ -22,8 +22,9 @@ import ongapp.dao.Ong;
 import ongapp.manager.OngManager;
 
 /**
- * @author carlos.fortes.medina && marco.testa.moreno
- *	Controlador de la lista de ongs
+ * Controlador de la lista de ongs
+ * @author carlos.fortes.medina & marco.testa.moreno
+ *	
  */
 
 public class OngFinderTableController {
@@ -32,15 +33,15 @@ public class OngFinderTableController {
 	 * Elementos de la escena
 	 */
 	@FXML
-	Button goBack;
+	private Button goBack;
 	@FXML
-	ChoiceBox<String> box = new ChoiceBox<String>();
+	private ChoiceBox<String> box = new ChoiceBox<String>();
 	@FXML
-	TextField searchBar;
+	private TextField searchBar;
 	@FXML
-	SceneController escena = new SceneController();
+	private SceneController escena = new SceneController();
 	@FXML
-	TableView<Ong> tabla;
+	private TableView<Ong> tabla;
 	@FXML
 	private TableColumn<Ong, String> nameCol;
 	@FXML

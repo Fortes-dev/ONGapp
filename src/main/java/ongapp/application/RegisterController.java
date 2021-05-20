@@ -14,8 +14,9 @@ import javafx.scene.control.Alert.AlertType;
 import ongapp.conector.Conector;
 import ongapp.manager.UsuarioManager;
 /**
- * @author carlos.fortes.medina && marco.testa.moreno
  * Controlador de la ventana Register
+ * @author carlos.fortes.medina & marco.testa.moreno
+ * 
  */
 
 public class RegisterController {
@@ -23,19 +24,19 @@ public class RegisterController {
 	 * Elementos de la escena
 	 */
 	@FXML
-	Button buttonSubmit;
+	private Button buttonSubmit;
 	@FXML
-	Button back;
+	private Button back;
 	@FXML
-	TextField email;
+	private TextField email;
 	@FXML
-	TextField username;
+	private TextField username;
 	@FXML
-	PasswordField password;
+	private PasswordField password;
 	@FXML
-	PasswordField passwordRepeat;
+	private PasswordField passwordRepeat;
 	@FXML
-	SceneController escena = new SceneController();
+	private SceneController escena = new SceneController();
 	/**
 	 * Constante final de error
 	 */

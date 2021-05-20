@@ -1,7 +1,7 @@
 package ongapp.conector;
 /**
  * Constantes para conexion a SQL
- * @author carlos.fortes.medina && marco.testa.moreno
+ * @author carlos.fortes.medina & marco.testa.moreno
  *
  */
 public class MySQLConstants {

@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 /**
  * Controlador de la escena principal
- * @author carlos.fortes.medina && marco.testa.moreno
+ * @author carlos.fortes.medina & marco.testa.moreno
  *
  */
 
@@ -17,15 +17,15 @@ public class PrincipalController {
 	 * Elementos de la escena
 	 */
 	@FXML
-	Button back;
+	private Button back;
 	@FXML
-	Button ongManager;
+	private Button ongManager;
 	@FXML
-	Button buttonHealth;
+	private Button buttonHealth;
 	@FXML
-	SceneController escena = new SceneController();
+	private SceneController escena = new SceneController();
 	@FXML
-	LoginController rol = new LoginController();
+	private LoginController rol = new LoginController();
 
 	/**
 	 * Nos devuelve a la escena anterior

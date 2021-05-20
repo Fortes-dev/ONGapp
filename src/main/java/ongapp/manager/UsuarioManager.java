@@ -12,7 +12,7 @@ import java.util.List;
 import ongapp.dao.Usuario;
 
 /**
- * @author carlos.fortes.medina && marco.testa.moreno
+ * @author carlos.fortes.medina & marco.testa.moreno
  *	Manager de la tabla Usuario
  */
 public class UsuarioManager {
@@ -79,13 +79,13 @@ public class UsuarioManager {
 	
 	/**
 	 * @param con Conexion db
-	 * @param password contraseña usuario
+	 * @param username nombre usuario
 	 * @return Nos devuelve la password
 	 */
-	public String findLoginPassword(Connection con, String password) {
-		try (PreparedStatement prepStmt = con.prepareStatement("select contraseña from usuario where contraseña = ?")) {
+	public String findLoginPassword(Connection con, String username) {
+		try (PreparedStatement prepStmt = con.prepareStatement("select contraseña from usuario where username = ?")) {
 
-			prepStmt.setString(1, password);
+			prepStmt.setString(1, username);
 
 			ResultSet result = prepStmt.executeQuery();
 			result.next();
@@ -96,11 +96,11 @@ public class UsuarioManager {
 		}
 	}
 	/**
+	 * Crea un nuevo usuario
 	 * @param con Conexion db
 	 * @param email email usuario
 	 * @param username nombre usuario
 	 * @param password contraseña usuario
-	 * @return Crea un nuevo usuario
 	 */
 	public void createUsuario(Connection con, String email, String username, String password) {
 
@@ -128,12 +128,12 @@ public class UsuarioManager {
 	}
 	
 	/**
+	 * Crea un nuevo usuario de modo administrador
 	 * @param con Conexion db
 	 * @param email email usuario
 	 * @param username nombre usuario
 	 * @param password contraseña usuario
 	 * @param rol rol usuario
-	 * @return Crea un nuevo usuario de modo administrador
 	 */
 	public void createUsuarioAdmin(Connection con, String email, String username, String password, String rol) {
 
@@ -161,9 +161,9 @@ public class UsuarioManager {
 	}
 	
 	/**
+	 * Borra un registro de usuario(buscamos por nombre)
 	 * @param con Conexion db
 	 * @param username nombre usuario
-	 * @return Borra un registro de usuario(buscamos por nombre)
 	 */
 	public void deleteUsuario(Connection con, String username) {
 		try (PreparedStatement prepStmt = con

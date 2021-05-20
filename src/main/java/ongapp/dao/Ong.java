@@ -18,12 +18,12 @@ public class Ong {
 	/**
 	 * Elementos de la tabla ong en la base de datos
 	 */
-	int id;
-	String nombre;
-	String tipo;
-	String web;
-	String ciudad;
-	String calle;
+	private	int id;
+	private String nombre;
+	private String tipo;
+	private String web;
+	private String ciudad;
+	private String calle;
 	
 	/**
 	 * Constructor del dao

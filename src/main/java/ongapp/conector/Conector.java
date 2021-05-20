@@ -10,7 +10,7 @@ import java.util.Properties;
 
 /**
  * Conector a la base de datos
- * @author carlos.fortes.medina && marco.testa.moreno
+ * @author carlos.fortes.medina & marco.testa.moreno
  *
  */
 public class Conector {

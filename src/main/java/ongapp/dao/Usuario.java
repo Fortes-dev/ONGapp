@@ -16,11 +16,11 @@ public class Usuario {
 	/**
 	 * Elementos de la tabla usuario
 	 */
-	int id;
-	String email;
-	String username;
-	String contraseña;
-	String rol;
+	private int id;
+	private String email;
+	private String username;
+	private String contraseña;
+	private String rol;
 	
 	/**
 	 * Constructor del dao

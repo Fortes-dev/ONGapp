@@ -15,23 +15,23 @@ import ongapp.conector.Conector;
 import ongapp.manager.UsuarioManager;
 
 /**
- * @author carlos.fortes.medina && marco.testa.moreno
- *	Controlador de la ventana de Login
+ * Controlador de la ventana de Login
+ * @author carlos.fortes.medina & marco.testa.moreno
  */
 public class LoginController {
 /**
  * Elementos de la escena
  */
 	@FXML
-	Button buttonLogin;
+	private Button buttonLogin;
 	@FXML
-	Button buttonRegister;
+	private Button buttonRegister;
 	@FXML
-	TextField username;
+	private TextField username;
 	@FXML
-	PasswordField password;
+	private PasswordField password;
 	@FXML
-	SceneController escena = new SceneController();
+	private SceneController escena = new SceneController();
 	
 	/**
 	 * Dirige a la escena de registro
@@ -57,7 +57,7 @@ public class LoginController {
 		if (username.getText().equals
 				(new UsuarioManager().findLoginUser(con, username.getText()))
 				&& password.getText().equals
-				(new UsuarioManager().findLoginPassword(con, password.getText()))) {
+				(new UsuarioManager().findLoginPassword(con, username.getText()))) {
 			try {
 				escena.switchToPrincipal(event);
 				con.close();

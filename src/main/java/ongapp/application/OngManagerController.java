@@ -14,7 +14,7 @@ import ongapp.conector.Conector;
 import ongapp.manager.OngManager;
 /**
  * Controlador del CRUD de ongs
- * @author carlos.fortes.medina && marco.testa.moreno
+ * @author carlos.fortes.medina & marco.testa.moreno
  *
  */
 public class OngManagerController {
@@ -22,39 +22,39 @@ public class OngManagerController {
 	 * Elementos de la escena
 	 */
 	@FXML
-	Button submit;
+	private Button submit;
 	@FXML
-	Button delete;
+	private Button delete;
 	@FXML
-	Button back;
+	private Button back;
 	@FXML
-	Button modify;
+	private Button modify;
 	@FXML
-	TextField nameRegister;
+	private TextField nameRegister;
 	@FXML
-	TextField typeRegister;
+	private TextField typeRegister;
 	@FXML
-	TextField webRegister;
+	private TextField webRegister;
 	@FXML
-	TextField cityRegister;
+	private TextField cityRegister;
 	@FXML
-	TextField addressRegister;
+	private TextField addressRegister;
 	@FXML
-	TextField nameDelete;
+	private TextField nameDelete;
 	@FXML
-	TextField nameModify;
+	private TextField nameModify;
 	@FXML
-	TextField newNameModify;
+	private TextField newNameModify;
 	@FXML
-	TextField typeModify;
+	private TextField typeModify;
 	@FXML
-	TextField webModify;
+	private TextField webModify;
 	@FXML
-	TextField cityModify;
+	private TextField cityModify;
 	@FXML
-	TextField addressModify;
+	private TextField addressModify;
 	@FXML
-	SceneController escena = new SceneController();
+	private SceneController escena = new SceneController();
 	/**
 	 * Nos devuelve a la escena anterior
 	 * @param event
